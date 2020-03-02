@@ -1,0 +1,9 @@
+very slow solution:
+===========================
+getL = lapply(drList[1:20], FUN = function(x){
++     aList = lapply(tr_Dis, FUN = function(y){
++         return(is.subset(as.set(unlist(x)), as.set(unlist(y))))
++     })
++     print(x)
++     return(ifelse(sum(unlist(aList)) > 0, 1, 0))
++ })
