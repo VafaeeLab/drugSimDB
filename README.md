@@ -76,21 +76,20 @@ This network-view is query-able.
         <img style='display: table; border-radius: 5px; border: 1px solid #293954; '
               src="documentation/pubmedSearch.png" width="700">
 
+- <b><i>Network-level:</i></b> From the network displayed in thix view, when user selects a particular drug (from the drop-down menu), then all its neighbours (order = 1) are highlighted with their connecting edges. The same feature is also induced when user mouse hover a particular drug. Again, users can select a particular group of drugs (activate; activate, investigational, etc.) to highlight them in the network using another drop-down menu.
+
 
 ### Query drug info
 For the query drug, it also provides following information:
-  1. P
-
-
-### Query drug info
-TBA
+  1. Physiochemical properties (<b>total 16</b>) of the query drug
+  2. Pharmacological properties (<b>total 16</b>) of the query drug
+  3. Molecular structure of the query drug in a 3D and interactive pane using MolView API (if PubChemID available). A periodic table is also displayed as a modal window if needed.
 
 ## Download
-TBA
+In this tab, user can download the full DrugSimDB database and corresponding Drug-pair network data in multiple suitable format format in order to facilitate ease-of-use, extendability and reproducibility. Moreover, user can also download individual similarity network in various network-related data format.
 
 ## Statistics
-TBA
+User can get the current statistics of current version of DrugSimDb, and various other data sources. 
 
 ## Issues/Bugs
-TBA
-
+Users are highly requested to report any feedback or bugs (if any) to Dr Fatemeh Vafaee (email: f.vafaee@unsw.edu.au) or Dr A. K. M. Azad (akm.azad@unsw.edu.au)
