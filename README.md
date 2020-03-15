@@ -1,89 +1,96 @@
-# drugSimDB
-Drug Similarity information
+# Introduction
 
-## Introduction
+This page provides notes and instructions on how to explore, visualize and extract drug-similarity information in DrugSimDB.
 
-R is a powerful programming language for statistical computing with many packages and tools.
+Current version of DrugSimDB includes chemical, structure, pathway, and functional GO terms similarities of <b>10,317</b> small-molecule drugs, yielding <b>238,635</b> drug-pairs with significant aggregated score.
 
-The goal of this article is to outline some ways to combine Shiny & R Markdown.
-
-We'll cover the main approaches below:
-
-1. **Interactive documents**
-
-2. **Including Markdown content in a Shiny app**
-
-3. **Generating downloadable reports from Shiny apps**
-
-4. **Embedding Shiny apps via their URLs in R Markdown output**
-
-5. **Shiny components in rtutor**
-
-## Interactive Documents - Overview
-- R Markdown leverages Shiny at its core to make this possible. Add runtime: shiny to the document’s YAML header.
-- [http://rmarkdown.rstudio.com/authoring_shiny.html](http://rmarkdown.rstudio.com/authoring_shiny.html)
-- [http://shiny.rstudio.com/articles/interactive-docs.html](http://shiny.rstudio.com/articles/interactive-docs.html)
-- [https://blog.rstudio.org/2014/06/19/interactive-documents-an-incredibly-easy-way-to-use-shiny/](https://blog.rstudio.org/2014/06/19/interactive-documents-an-incredibly-easy-way-to-use-shiny/)
-- [http://rmarkdown.rstudio.com/flexdashboard/shiny.html](http://rmarkdown.rstudio.com/flexdashboard/shiny.html)
-- As of Spring 17 - Shiny apps can’t currently be embedded into R Notebooks.
-
-## Interactive Documents - an R Markdown file that contains Shiny components and can be an app or used within a report
-
-- Types of Interactive Documents:
-- 1. RMD Interactive Document/Report with Shiny components 
-- Example: Demo by using File > New > RMarkdown > Shiny > Shiny Document
-- 2. HTML presentations with Embed Shiny components
-- Example: Demo by using File > New > RMarkdown > Shiny > Shiny Presentation
-- *1/2 Note*. It is also possible to embed an entire shiny application within an R Markdown document using the `shinyAppDir` function or `shinyAppFile` or source
-- http://rmarkdown.rstudio.com/authoring_embedded_shiny.html
-- 3. R Markdown report as Shiny app
-- Example [https://jjallaire.shinyapps.io/shiny-ggplot2-brushing/](https://jjallaire.shinyapps.io/shiny-ggplot2-brushing/)
-
-## Include Markdown content in a Shiny app - Overview
-- It's possible to include files with HTML, text, or Markdown content in a Shiny app.
-- [http://shiny.rstudio.com/gallery/including-html-text-and-markdown-files.html](http://shiny.rstudio.com/gallery/including-html-text-and-markdown-files.html)
-- The includeMarkdown function requires the markdown package.
-- [https://shiny.rstudio.com/reference/shiny/latest/include.html](https://shiny.rstudio.com/reference/shiny/latest/include.html)
-
-## Include Markdown content in a Shiny app - Example
-- [https://github.com/abhik1368/openfda-dashboard](https://github.com/abhik1368/openfda-dashboard)
-- [https://raw.githubusercontent.com/abhik1368/openfda-dashboard/master/ui.R](https://raw.githubusercontent.com/abhik1368/openfda-dashboard/master/ui.R)
-- [https://diabetescheck.shinyapps.io/openfda-dashboard/](https://diabetescheck.shinyapps.io/openfda-dashboard/)
-
-## Generating downloadable reports from Shiny app
-- It is often required after interacting with a Shiny application to download a report in HTML or PDF format. This can be done with knitr and rmarkdown. The app takes one input value, and passes it as a parameter to an .Rmd document, which is rendered (or knitted) into an HTML output file.
-- [https://shiny.rstudio.com/articles/generating-reports.html](https://shiny.rstudio.com/articles/generating-reports.html)
-- [http://shiny.rstudio.com/gallery/download-knitr-reports.html](http://shiny.rstudio.com/gallery/download-knitr-reports.html)
-- Another way to generate a PDF is to pass in a value to output_format argument of rmarkdown::render(). It will also require pdflatex to be installed on your system.
-- http://shiny.rstudio.com/gallery/download-knitr-reports.html
-
-## Generating downloadable reports from Shiny app - Example
-
-- [https://github.com/aaronjfisher/interAdapt/tree/master/r_package/inst/interAdapt](https://github.com/aaronjfisher/interAdapt/tree/master/r_package/inst/interAdapt)
-- [https://michaelrosenblum.shinyapps.io/interAdapt/](https://michaelrosenblum.shinyapps.io/interAdapt/)
-
-## Embedding Shiny apps via their URLs in R Markdown output - Overview
-
-- With the knitr package, the functions knitr::include_url() and include_app() can be used by inserting an iframe or a screenshot/image in the output. iframes are basically a box on one web page to embed another web page. knitr::include_app() was designed for embedding Shiny apps via their URLs in RMD output.
-- [https://bookdown.org/yihui/bookdown/web-pages-and-shiny-apps.html](https://bookdown.org/yihui/bookdown/web-pages-and-shiny-apps.html)
+Overall, this interface is user-friendly and responsive.
 
 
-## Embedding Shiny apps via their URLs in R Markdown output - Examples
+<img style='display: table; border-radius: 5px; border: 1px solid #293954; '
+              src="documentation/Figure 1.png" width="400">
 
-- RMD HTML Output - http://r4ds.had.co.nz/r-markdown-formats.html
-- https://bookdown.org/
-- http://rmarkdown.rstudio.com/rmarkdown_websites.html
-- https://github.com/rstudio/blogdown
-  
-## Shiny Components in rtutor - Overview & Examples
-- rtutor package makes it easy to turn any R Markdown document into an interactive tutorial
-- rtutor package uses runtime: shiny_prerendered to turn regular R Markdown documents into live tutorials
-- https://rstudio.github.io/rtutor/index.html
-- https://rstudio.github.io/rtutor/index.html#shiny_components
-- https://rstudio.github.io/rtutor/examples.html
+# Main Search Interface
+The main interface for exploring the DrugSimDB database looks like bellow:
 
-## Further Reading
+<img style='display: table; border-radius: 5px; border: 1px solid #293954; '
+              src="documentation/Figure 2.png" width="400">
 
-- http://rmarkdown.rstudio.com/authoring_shiny_prerendered.html
-- http://colorado.rstudio.com:3939/content/188/ by Edgar Ruiz
-- [http://rmarkdown.rstudio.com/authoring_shiny_advanced.html](http://rmarkdown.rstudio.com/authoring_shiny_advanced.html)
+## Search a Drug
+The following image shows the search panel, where a drug name is queried in the DrugSimDB database to retrieve its similarity information with other drugs. Please note DrugSimDB only includes similarity information about statistically significant drug-pairs (<b>total: 238,635</b>). 
+
+<!-- ![](../www/tutorial images/search_pan.png) -->
+<img style='display: table; border-radius: 5px; border: 1px solid #293954; '
+              src="documentation/search_pan.png" width="300">
+
+It lists all the available drugs that have similarity information in the DrugSimDB, including a search bar and an option for choosing the combined similarity score to display with, i.e. aggregated score, p-value or adjusted p-value. The search bar supports auto-complete feature (see below). Therefore, when user enters a partial keyword as the drug name, for example, "<b>biva</b>", the list automatically filters to matching drug names "<b>Bivalirudin</b>" and "<b>Tetrahydrocannabivarin</b>". 
+
+<img style='display: table; border-radius: 5px; border: 1px solid #293954; '
+              src="documentation/search_pan_search_demo.png" width="300">
+
+Each Drug name has a "<b>View</b>" button next to it, and when clicked, the result is displayed in the right panel that includes all the similarity information about the query drug (see next sub-section).
+
+### Query Result (Tabular-View)
+When a the <b>View</b> button is pressed for a drug, all other drugs that have statistically significant combined-similarity will be shown in a table along with other individual similarity scores, e.g. structure similarity, chemical similarity, target pathway similarity, GO terms similarity. The table also shows the statuses of the incident drugs annotated in [Drugbank](https://www.drugbank.ca). Note, depending on the option chosen (see above) before the query being made, the final column in the table displays the information about the combined knowledge of all the individual similarity scores, i.e. Combined score, p-value, or adjusted p-value. 
+
+<img style='display: table; border-radius: 5px; border: 1px solid #293954; '
+              src="documentation/search_tableView.png" width="600">
+
+This table view is exportable in multiple format, e.g. CSV, Excel, PDF. It can also be copied in the ClipBoard and be printed using system default printer driver. There is a global search bar at the top of the view, which allows user to filter any the whole table based on a query word that works for all the columns. Morever, the table can be sorted based on individual column and has pagination support.
+
+### Query Result (Network-view)
+One of the most important feature of this interface is the network view of drug-pairs based on the similarity. Including the query drug, a subset of all the other drugs that are reported as being significantly similar (see the Table-View) in the DrugSimDB, has been used to extract the induced sub-network from the DrugSimDB network (undirected, formed by all the drug-pairs). The network-view of that induced sub-network looks like the following:
+
+
+<img style='display: table; border-radius: 5px; border: 1px solid #293954; '
+              src="documentation/search_NetworkView.png" width="600">
+
+This view has several useful feature, which are described below.
+
+#### <b>Interactive</b>
+This view is interactive. Users can drag the components of the network, i.e. nodes or edges using mouse or touch in order for better visualization. Moreover, the view-pan has navigation button to move the whole network-view left, right, up, or down. There are buttons for zooming-in, zooming-out and expanding the network to fit the pan. Usuers can also export the whole view-pan, which only supports .png format only. 
+
+#### <b>Visualy informative</b>
+IN this network-view, the nodes (Drugs) are colored based on the groups that they were annotated in the [Drugbank](https://www.drugbank.ca), e.g. <b>approved</b>; <b>approved, experimental</b>; and <b>approved, vet_approved</b>. All the edge colors are the same, but their widths varies in proportionate to the scores shown in the final column (combined score, or p-value, or adjusted p-value) of the tablur-view. 
+
+#### <b>Query-able</b>
+This network-view is query-able. 
+
+- <b><i>Node:</i></b> On node mouse-hover event, user can see the following informaiton 
+    1. Drug Name
+    2. Status, i.e. Approved, investigational, etc.
+    3. List of adverse Side-effects (from [SIDER](http://sideeffects.embl.de/) database)
+    
+    
+    <img style='display: table; border-radius: 5px; border: 1px solid #293954; '
+              src="documentation/node_hover.png" width="300">
+    
+- <b><i>Edge:</i></b> On click-event of an edge, it makes a pubmed query (using [easyPubMed R package](https://cran.r-project.org/web/packages/easyPubMed/easyPubMed.pdf)) with the <b>two incident drug names</b>, and retrieves and p a list of pubmed articles that have the co-occurance of those two drugs. This process has several steps:
+
+    - <i>Step #1</i>: Using both drug names (incident to an edge), make a query in PubMed in all the fields, and a list of article IDs is returned, where the drug-pair is co-mentioned in corresponding articles. For example, for an edge with drug-pair, <b>Apixaban-Bivalirudin</b>, the PubMed query string forms like this: <b>Apixaban[All Fields] AND Bivalirudin[All Fields]</b>. We have used the <i>get_pubmed_ids()</i> function defined in the [easyPubMed R package](https://cran.r-project.org/web/packages/easyPubMed/easyPubMed.pdf) for this purpose.
+    
+    - <i>Step #2:</i>Next, with the article IDs, a set of pubmed article data is retrieved from PubMed by using  <i>fetch_pubmed_data()</i> function defined in the [easyPubMed R package](https://cran.r-project.org/web/packages/easyPubMed/easyPubMed.pdf). This step is currently restricts fetching PumMed data for top 20 records in the list. Hence, even if the number of found article IDs can be arbitrarily large, this constraint keeps the network and cpu usage within tractable scope.
+    
+    - <i>Step #3:</i> The <i>fetch_pubmed_data()</i> function returns data in XML format which requires further processing, i.e. converting into list () and then finally a dataframe of article info (using our in-house script), using using the <i>articles_to_list()</i> and <i>article_to_df()</i> functions defined in the [easyPubMed R package](https://cran.r-project.org/web/packages/easyPubMed/easyPubMed.pdf). This dataframe contains article information which then later displayed in modal window (see below) in the PubMed reference format. Note, since the dataframe is tabularied as a data table, user can 1) search the that table using a global search bar at the top-right cornar of that modal window, 2) navigate the list using the pagination shown at the bottom of the table.
+    
+        <img style='display: table; border-radius: 5px; border: 1px solid #293954; '
+              src="documentation/pubmedSearch.png" width="700">
+
+
+### Query drug info
+For the query drug, it also provides following information:
+  1. P
+
+
+### Query drug info
+TBA
+
+## Download
+TBA
+
+## Statistics
+TBA
+
+## Issues/Bugs
+TBA
+
