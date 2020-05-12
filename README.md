@@ -1,6 +1,6 @@
 # Introduction
 
-This page provides notes and instructions on how to explore, visualize and extract drug-similarity information in DrugSimDB.
+This page provides notes and instructions on how to explore, visualize and extract drug-similarity information in DrugSimDB (URL: http://vafaeelab.com/drugSimDB.html).
 
 Current version of DrugSimDB includes chemical, structure, pathway, and functional GO terms similarities of <b>10,317</b> small-molecule drugs, yielding <b>238,635</b> drug-pairs with significant aggregated score.
 
