@@ -3,7 +3,7 @@
 ## Updating databases:
 Run the following cURL commands to download latest versions of required DrugBank databases (you need to make a free account) and save them into ./data/external:
 
-### For Structureal similarities:
+### For Structural similarities:
 Downlod it from: https://www.drugbank.ca/releases/5-1-3/downloads/all-structures 
 
 ### For Target-based protein sequence similarities:
