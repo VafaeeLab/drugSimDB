@@ -28,3 +28,12 @@ Downlod it from: https://www.drugbank.ca/releases/5-1-3/downloads/all-structures
 - Steps #1: Run "update_KEGGpathways_for_drugs_cov.R" for getting KEGG pathways annotated as targetted by the drugs
 - Steps #2: Run "update_pathway_similarity_v2.sh" (for "update_pathway_similarity_v2.R") in HPC that finds target pathway 
 	similarities of all the drugs
+	
+### For GO term-based function similarities
+- Step #1: Run "update_target_Pathway_PPI_GO_BP_similarity.sh" which invokes "update_target_Pathway_PPI_GO_BP_similarity.R" and 
+		produces a temporary output file "result.BP.rds" file
+- Step #2: Run "multiple_jobs_GO_Katana.sh" that runs with a batches of drugs, where 
+		each batch is executed with "parallel_GO_Sim_Katana.sh" that runs "parallel_GO_Sim_Katana.R" using "result.BP.rds" input file
+- Step #3: (Optionally, download all the chunks into the local machine, and) run "combine_GO_Sim_files.R" to merge them 
+
+[same for BP, MF and CC]
